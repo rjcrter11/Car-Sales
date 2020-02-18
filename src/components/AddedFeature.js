@@ -1,6 +1,7 @@
-import React from 'react';
+import React from "react";
+import { connect } from "react-redux";
 
-const AddedFeature = props => {
+const AddedFeature = (props) => {
   return (
     <li>
       {/* Add an onClick to run a function to remove a feature */}
@@ -10,4 +11,11 @@ const AddedFeature = props => {
   );
 };
 
-export default AddedFeature;
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    additionalFeatures: state.addFeaturesReducer.additionalFeatures
+  };
+};
+
+export default connect(mapStateToProps, {})(AddedFeature);
