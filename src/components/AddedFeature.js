@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { removeFeature } from "../actions/featureActions";
 
 const AddedFeature = (props) => {
-  // console.log(props);
+  console.log("Remove function props:", removeFeature(props));
   return (
     <li>
       {/* Add an onClick to run a function to remove a feature */}
@@ -15,9 +15,4 @@ const AddedFeature = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  console.log(state);
-  return null;
-};
-
-export default connect(mapStateToProps, { removeFeature })(AddedFeature);
+export default connect(null, { removeFeature })(AddedFeature);

@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import { buyItem } from "../actions/featureActions";
 
 const AdditionalFeature = (props) => {
-  console.log(props);
+  console.log("Feature props", props);
+  console.log("function props: ", buyItem(props));
   return (
     <li>
       {/* Add an onClick that will let you add a feature to your car */}
@@ -15,9 +16,4 @@ const AdditionalFeature = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  console.log(state);
-  return null;
-};
-
-export default connect(mapStateToProps, { buyItem })(AdditionalFeature);
+export default connect(null, { buyItem })(AdditionalFeature);
